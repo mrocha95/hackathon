@@ -1,11 +1,18 @@
-import "./App.css";
+// import "./App.css";
+import React from 'react';
+import {Routes, Route, Link, useNavigate} from 'react-router-dom'
+
+import Signup from './components/Signup';
 
 function App() {
-  return <div>
-    <h1>Todo list</h1>
-    <p>App description goes here</p>
-    <p>Difficulty (1-10)</p>
-  </div>;
+  return (
+  <div>
+
+    <Routes>
+      <Route path="/signup" element={<Signup />} /> 
+    </Routes>
+  </div>
+  );
 }
 
 export default App;

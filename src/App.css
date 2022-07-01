@@ -35,4 +35,12 @@
   to {
     transform: rotate(360deg);
   }
-} */
+}
+
+
+nav{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 40px;
+}

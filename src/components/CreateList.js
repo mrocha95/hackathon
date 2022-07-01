@@ -5,6 +5,25 @@ function CreateList() {
   const [description, setDescription] = React.useState("");
   const [difficulty, setDifficulty] = React.useState(0);
 
+  const [list, setList] = React.useState([])
+
+
+  const addToArr = () => {
+    setList(list.concat({    
+    "title": title, 
+    "description": description, 
+    "difficulty": difficulty}))
+  }
+
+  const remove = (element) => {
+    let newList = [...list]
+    console.log(newList.indexOf(element))
+
+    newList.splice(newList.indexOf(element))
+    setList(newList)
+  }
+
+
   const number = () => {
     if (title && description && difficulty < 10) {
       setTitle("");
@@ -12,6 +31,7 @@ function CreateList() {
       setDifficulty("");
     }
   };
+
 
   return (
     <div>
@@ -28,9 +48,22 @@ function CreateList() {
         value={difficulty}
         onChange={(e) => setDifficulty(e.target.value)}
       ></input>
-      <div>
-        <button onClick={number}>Create</button>
-      </div>
+
+      <button onClick={addToArr}>Submit</button>
+
+      <ul>
+        {list.map(function(el){
+          return( 
+            <div>
+              <li>{el.title}</li>
+              <li>{el.description}</li>
+              <li>{el.difficulty}</li>
+              <button onClick={() => remove(el)}>remove</button>
+            </div>
+
+          )})}
+      </ul>
+
     </div>
   );
 }

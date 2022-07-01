@@ -43,3 +43,16 @@ nav {
   justify-content: space-between;
   font-size: 40px;
 }
+
+section > .list{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+.name{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

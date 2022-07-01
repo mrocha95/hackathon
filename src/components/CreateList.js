@@ -4,6 +4,15 @@ function CreateList() {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [difficulty, setDifficulty] = React.useState(0);
+
+  const number = () => {
+    if (title && description && difficulty < 10) {
+      setTitle("");
+      setDescription("");
+      setDifficulty("");
+    }
+  };
+
   return (
     <div>
       <h1>Create Your List</h1>
@@ -19,6 +28,9 @@ function CreateList() {
         value={difficulty}
         onChange={(e) => setDifficulty(e.target.value)}
       ></input>
+      <div>
+        <button onClick={number}>Create</button>
+      </div>
     </div>
   );
 }

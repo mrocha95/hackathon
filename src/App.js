@@ -18,7 +18,6 @@ function App() {
         <Route path="/CreateList" element={<CreateList />} />
       </Routes>
     </div>
-
   );
 }
 

@@ -4,6 +4,7 @@ function CreateList() {
   const [title, setTitle] = React.useState("");
   const [description, setDescription] = React.useState("");
   const [difficulty, setDifficulty] = React.useState(0);
+
   const [list, setList] = React.useState([])
 
 
@@ -21,6 +22,16 @@ function CreateList() {
     newList.splice(newList.indexOf(element))
     setList(newList)
   }
+
+
+  const number = () => {
+    if (title && description && difficulty < 10) {
+      setTitle("");
+      setDescription("");
+      setDifficulty("");
+    }
+  };
+
 
   return (
     <div>
@@ -52,6 +63,7 @@ function CreateList() {
 
           )})}
       </ul>
+
     </div>
   );
 }
